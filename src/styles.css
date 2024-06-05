@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Nunito; }
+a{
+  text-decoration: none;
+}
+p{
+  color: #696363;
+  font-size: 25px;
+  font-weight: normal;
+  text-wrap: pretty;
+}
+h1{
+  color:#607C3C;
+  font-size: 50px;
+  font-weight: bolder;
+}
+h2{
+  font-size: 36px;
+  color:#607C3C;
+  text-wrap: pretty;
+  text-align:left;
+}
