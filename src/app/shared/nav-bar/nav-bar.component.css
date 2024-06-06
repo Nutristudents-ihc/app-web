@@ -42,7 +42,7 @@ nav img {
 
 .menu__item a {
   color: #607C3C;
-
+  transition-duration: 0.2s;
   font-weight: bold;
 }
 

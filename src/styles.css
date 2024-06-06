@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Nunito; }
+html, body { height: 100%;font-family: Nunito !important;  }
+body { margin: 0; }
 a{
   text-decoration: none;
 }
@@ -21,4 +21,7 @@ h2{
   color:#607C3C;
   text-wrap: pretty;
   text-align:left;
+}
+::placeholder{
+  font-size: Nunito !important;
 }
