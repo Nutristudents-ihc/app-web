@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'comunidad', loadChildren: () => import('./comunidad/comunidad.module').then(m => m.ComunidadModule) },
   { path: 'seguimiento', loadChildren: () => import('./seguimiento/seguimiento.module').then(m => m.SeguimientoModule) },
   { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
+  { path: 'dietas',loadChildren:()=>import('./dietas/dietas.module').then(m=> m.DietasModule)},
 ];
 
 @NgModule({

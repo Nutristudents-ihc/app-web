@@ -12,6 +12,7 @@ import { LoginModule } from './login/login.module';
 import { SigninModule } from './signin/signin.module';
 import { SeguimientoModule } from './seguimiento/seguimiento.module';
 import { HomeModule } from './home/home.module';
+import { DietasModule } from './dietas/dietas.module'
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { HomeModule } from './home/home.module';
     LoginModule,
     SigninModule,
     SeguimientoModule,
-    HomeModule
+    HomeModule,
+    DietasModule
   ],
   providers: [
     provideAnimationsAsync()
