@@ -1,0 +1,41 @@
+<div class="form-container">
+
+  <form [formGroup]="formGroup" class="form">
+
+  <mat-form-field class="user">
+    <mat-label>Usuario o correo electrónico</mat-label>
+    <input matInput
+      placeholder="John Doe"
+      formControlName="user"
+      (blur)="userErrorMessage()"
+      required>
+      @if (user.invalid) {
+        <mat-error>{{errorMessage}}</mat-error>
+      }
+  </mat-form-field>
+
+  <mat-form-field class="pass">
+    <mat-label>Ingresa tu contraseña</mat-label>
+    <input matInput [type]="hide ? 'password' : 'text'"
+      placeholder="pass123$asdf"
+      formControlName="pass"
+      (blur)="passErrorMessage()"
+      required>
+      @if (pass.invalid) {
+        <mat-error>{{errorMessage2}}</mat-error>
+      }
+
+    <button mat-icon-button matSuffix (click)="clickEvent($event)" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+
+
+
+  <div class="alternativas">
+    <a class="alternativas__enlace" title="Crea tu cuenta" [routerLink]="['../signin']" routerLinkActive="active" >Aún no tengo cuenta</a>
+    <a class="alternativas__enlace" title="Cambia la contraseña"[routerLink]="['pass-recover']" routerLinkActive="active" >Me olvidé la contraseña</a>
+  </div>
+  <button mat-flat-button class="enviar" [disabled]="!formGroup.valid" color="custom-color">ENTRAR</button>
+  </form>
+</div>

@@ -1,0 +1,51 @@
+.form-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user{
+  margin-top: 10px;
+}
+
+mat-form-field
+{
+  margin: 10px 0;
+}
+.user,.email,.pass {
+  width: 50%;
+}
+
+td {
+  padding-right: 8px;
+}
+mat-form-field .mat-form-field-suffix .mat-icon-button:focus {
+  outline: none;
+}
+
+mat-form-field .mat-form-field-suffix .mat-icon-button {
+  border: none;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.dialog-container{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.mat-custom-color{
+  background-color: #95D907 !important;
+  transition-property: background-color;
+  transition-duration: 0.2s;
+  font-family: Nunito !important;
+  font-size: large;
+  color:#FFF !important;
+}
+.mat-custom-color[disabled]{
+  background-color: #636363!important;
+}
+.mat-custom-color:hover{
+  background-color: #6e9911 !important;
+}
