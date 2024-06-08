@@ -29,6 +29,11 @@ export class FormsComponent {
       .subscribe(() => this.userErrorMessage())
 
   }
+  private readonly fb=inject(FormBuilder);
+  formGroup = this.fb.group({
+    user: ['', [Validators.required]],
+    pass: ['', [Validators.required]]
+  });
 
   userErrorMessage(){
     if (this.user.hasError('required')) {

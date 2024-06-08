@@ -1,30 +1,64 @@
 <div class="form-container">
 
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form">
+
+    <mat-form-field class="user">
+      <mat-label>Nombre de usuario</mat-label>
+      <input matInput
+        placeholder="John Doe"
+        formControlName="user"
+        (blur)="userErrorMessage()"
+        required>
+        @if (user.invalid) {
+          <mat-error>{{errorMessage}}</mat-error>
+        }
+    </mat-form-field>
+
+    <mat-form-field class="email">
+
+      <mat-label>Email</mat-label>
+      <input matInput
+            placeholder="pat@example.com"
+            formControlName="email"
+            (blur)="updateErrorMessage()"
+            required>
+            <mat-error *ngIf="email.invalid">{{errorMessage2}}</mat-error>
+
+    </mat-form-field>
 
 
-  <mat-form-field class="user">
-    <mat-label>First name</mat-label>
-    <input matInput
-      placeholder="John Doe"
-      [formControl]="user"
-      (blur)="userErrorMessage()"
-      required>
-      @if (user.invalid) {
-        <mat-error>{{errorMessage}}</mat-error>
-      }
-  </mat-form-field>
+    <mat-form-field class="pass">
+      <mat-label>Ingresa tu contraseña</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'"
+        placeholder="pass123$asdf"
+        formControlName="pass"
+        (blur)="passErrorMessage()"
+        required>
+        @if (pass.invalid) {
+          <mat-error>{{errorMessage3}}</mat-error>
+        }
+        <button mat-icon-button matSuffix (click)="clickEvent($event)" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+    </mat-form-field>
 
-  <mat-form-field class="email">
+    <mat-form-field class="pass">
+      <mat-label>Confirma tu contraseña</mat-label>
+      <input matInput [type]="hide2 ? 'password' : 'text'"
+        placeholder="pass123$asdf"
+        formControlName="confirmPass"
+        (blur)="passErrorMessage2()"
+        required>
+        @if (confirmPass.invalid) {
+          <mat-error>{{errorMessage4}}</mat-error>
+        }
+        <button mat-icon-button matSuffix (click)="clickEvent2($event)" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide2">
+          <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+    </mat-form-field>
 
-    <mat-label>Enter your email</mat-label>
-    <input matInput
-           placeholder="pat@example.com"
-           [formControl]="email"
-           (blur)="updateErrorMessage()"
-           required>
-    @if (email.invalid) {
-      <mat-error>{{errorMessage2}}</mat-error>
-    }
 
-  </mat-form-field>
+
+    <button mat-flat-button class="enviar" (click)="openDialog()" type="submit" [disabled]="registerForm.invalid" color="custom-color">ENTRAR</button>
+  </form>
 </div>

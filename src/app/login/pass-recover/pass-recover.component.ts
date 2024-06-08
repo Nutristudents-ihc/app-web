@@ -39,15 +39,10 @@ export class PassRecoverComponent {
   }
 
   updateErrorMessage() {
-    const emailErrors = this.email.errors;
-    if (emailErrors) {
-      if (emailErrors['required']) {
-        this.errorMessage = 'Debes llenar este campo';
-      } else if (emailErrors['email']) {
-        this.errorMessage = 'Ingresa un email válido';
-      } else {
-        this.errorMessage = '';
-      }
+    if (this.email.hasError('required')) {
+      this.errorMessage = 'Debes llenar este campo';
+    } else if (this.email.hasError('email')) {
+      this.errorMessage = 'Ingresa un email válido';
     } else {
       this.errorMessage = '';
     }

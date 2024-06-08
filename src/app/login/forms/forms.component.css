@@ -3,7 +3,12 @@
   flex-direction: column;
   align-items: center;
 }
-
+.form{
+  width: 100%;
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+}
 .user{
   margin-top: 10px;
 }
@@ -29,11 +34,7 @@ a:visited{
 td {
   padding-right: 8px;
 }
-.mat-custom-color{
-  background-color: #95D907 !important;
-  transition-property: background-color;
-  transition-duration: 0.2s;
-}
+
 .enviar{
   width: 20%;
   height: 50px;
@@ -41,6 +42,17 @@ td {
 }
 .enviar:hover{
   background-color: #6e9911;
+}
+.mat-custom-color{
+  background-color: #95D907 !important;
+  transition-property: background-color;
+  transition-duration: 0.2s;
+  font-family: Nunito !important;
+  font-size: large;
+  color:#FFF !important;
+}
+.mat-custom-color[disabled]{
+  background-color: #636363!important;
 }
 .mat-custom-color:hover{
   background-color: #6e9911 !important;
