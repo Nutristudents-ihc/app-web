@@ -19,14 +19,6 @@ td {
   padding-right: 8px;
 }
 
-.mat-custom-color{
-  background-color: #95D907 !important;
-  transition-property: background-color;
-  transition-duration: 0.2s;
-  font-family: Nunito !important;
-  font-size: large;
-  color:#FFF !important;
-}
 form{
   display: flex !important;
   flex-direction: column !important;
@@ -42,6 +34,14 @@ form{
   box-shadow: 0 5px 10px 0 #000a;
 }
 
+.mat-custom-color{
+  background-color: #95D907 !important;
+  transition-property: background-color;
+  transition-duration: 0.2s;
+  font-family: Nunito !important;
+  font-size: large;
+  color:#FFF !important;
+}
 .mat-custom-color[disabled]{
   background-color: #636363!important;
 }
