@@ -1,0 +1,54 @@
+.form-container,.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+mat-form-field
+{
+  margin: 10px 0;
+}
+h1{
+  margin-top: 30px;
+}
+p{
+  margin: 0 10% 2% 10%;
+  font-size: large;
+}
+td {
+  padding-right: 8px;
+}
+
+.mat-custom-color{
+  background-color: #95D907 !important;
+  transition-property: background-color;
+  transition-duration: 0.2s;
+  font-family: Nunito !important;
+  font-size: large;
+  color:#FFF !important;
+}
+form{
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100%;
+}
+.email{
+  width: 30%;
+}
+.enviar{
+  width: 20%;
+  height: 50px;
+  box-shadow: 0 5px 10px 0 #000a;
+}
+
+.mat-custom-color[disabled]{
+  background-color: #636363!important;
+}
+.mat-custom-color:hover{
+  background-color: #6e9911 !important;
+}
+
+.form{
+  display: block;
+}
