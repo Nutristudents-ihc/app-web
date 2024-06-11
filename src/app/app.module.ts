@@ -12,14 +12,20 @@ import { LoginModule } from './login/login.module';
 import { SigninModule } from './signin/signin.module';
 import { SeguimientoModule } from './seguimiento/seguimiento.module';
 import { HomeModule } from './home/home.module';
+
 import { DietasModule } from './dietas/dietas.module'
+
+import { FormsComponent } from './login/forms/forms.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    FooterComponent,
+    FooterComponent
+
+
   ],
   imports: [
     BrowserModule,
@@ -30,7 +36,12 @@ import { DietasModule } from './dietas/dietas.module'
     SigninModule,
     SeguimientoModule,
     HomeModule,
+
     DietasModule
+
+    FormsComponent,
+    ReactiveFormsModule
+
   ],
   providers: [
     provideAnimationsAsync()

@@ -1,0 +1,20 @@
+<div class="form-container">
+  <h1>RECUPERA LA CONTRASEÑA</h1>
+  <p>Si has olvidado la contraseña de tu cuenta, o no tienes acceso a ella, ingresa a continuación el correo electrónico que usaste para registrarte en PEAK.</p>
+  <form [formGroup]="formGroup" class="form">
+    <mat-form-field class="email">
+      <mat-label>Ingresa tu email</mat-label>
+      <input matInput
+             placeholder="pat@example.com"
+             (blur)="updateErrorMessage()"
+             formControlName="email"
+             required>
+
+        @if (email.invalid) {
+        <mat-error>{{errorMessage}}</mat-error>
+        }
+    </mat-form-field>
+  </form>
+  <button class="enviar" mat-button type="submit" color="custom-color" [disabled]="!formGroup.valid" (click)="openDialog()">Enviar</button>
+</div>
+
