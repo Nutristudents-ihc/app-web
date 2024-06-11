@@ -1,0 +1,51 @@
+<div class="survey-wrapper">
+  <div class="survey-container">
+    <h2>¿CÓMO ERES?</h2>
+    <form (ngSubmit)="onSubmit()" #surveyForm="ngForm">
+      <!-- Sexo -->
+      <div class="form-group">
+        <label>SEXO</label>
+        <div class="sexo-options">
+          <input type="radio" id="femenino" [(ngModel)]="survey.sexo" name="sexo" value="femenino" required>
+          <label for="femenino" class="sexo-option">
+            <img src="ruta/a/icono-femenino.png" alt="Femenino"> <!-- Reemplaza con el icono femenino -->
+          </label>
+          <input type="radio" id="masculino" [(ngModel)]="survey.sexo" name="sexo" value="masculino" required>
+          <label for="masculino" class="sexo-option">
+            <img src="ruta/a/icono-masculino.png" alt="Masculino"> <!-- Reemplaza con el icono masculino -->
+          </label>
+        </div>
+      </div>
+
+      <!-- Edad -->
+      <div class="form-group">
+        <label for="edad">EDAD</label>
+        <input type="number" id="edad" [(ngModel)]="survey.edad" name="edad" required>
+      </div>
+
+      <!-- Peso -->
+      <div class="form-group">
+        <label for="peso">ESCRIBE PESO (KG)</label>
+        <input type="number" id="peso" [(ngModel)]="survey.peso" name="peso" required>
+      </div>
+
+      <!-- Altura -->
+      <div class="form-group">
+        <label for="altura">ESCRIBE ALTURA (CM)</label>
+        <input type="number" id="altura" [(ngModel)]="survey.altura" name="altura" required>
+      </div>
+
+      <!-- Grasa Corporal -->
+      <div class="form-group">
+        <label for="grasaCorporal">TU GRASA CORPORAL (OPCIONAL)</label>
+        <input type="number" id="grasaCorporal" [(ngModel)]="survey.grasaCorporal" name="grasaCorporal">
+      </div>
+
+      <!-- Botones -->
+      <div class="buttons">
+        <button type="button" class="btn btn-back" routerLink="/">ATRÁS</button>
+        <button type="submit" class="btn btn-next" routerLink="/dietas/tipos-comida">SIGUIENTE</button>
+      </div>
+    </form>
+  </div>
+</div>

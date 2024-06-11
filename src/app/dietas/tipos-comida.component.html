@@ -1,0 +1,16 @@
+<div class="comida-wrapper">
+  <div class="comida-container">
+    <h2>¿QUÉ TIPOS DE COMIDA PUEDES COMER?</h2>
+    <form (ngSubmit)="onSubmit()" #comidaForm="ngForm">
+      <div class="form-group" *ngFor="let tipo of tiposComida">
+        <button type="button" (click)="onToggleSelect(tipo)" [class.selected]="tipo.selected">
+          {{ tipo.name }}
+        </button>
+      </div>
+      <div class="buttons">
+        <button type="button" class="btn btn-back" routerLink="/dietas">ATRÁS</button>
+        <button type="submit" class="btn btn-next">SIGUIENTE</button>
+      </div>
+    </form>
+  </div>
+</div>
