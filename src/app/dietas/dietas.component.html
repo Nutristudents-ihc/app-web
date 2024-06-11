@@ -1,51 +1,45 @@
-<div class="survey-wrapper">
-  <div class="survey-container">
-    <h2>¿CÓMO ERES?</h2>
-    <form (ngSubmit)="onSubmit()" #surveyForm="ngForm">
-      <!-- Sexo -->
+<mat-horizontal-stepper linear>
+  <mat-step [stepControl]="personalInfoForm">
+    <form [formGroup]="personalInfoForm" class="step-form">
+      <h2>¿CÓMO ERES?</h2>
       <div class="form-group">
-        <label>SEXO</label>
-        <div class="sexo-options">
-          <input type="radio" id="femenino" [(ngModel)]="survey.sexo" name="sexo" value="femenino" required>
-          <label for="femenino" class="sexo-option">
-            <img src="ruta/a/icono-femenino.png" alt="Femenino"> <!-- Reemplaza con el icono femenino -->
-          </label>
-          <input type="radio" id="masculino" [(ngModel)]="survey.sexo" name="sexo" value="masculino" required>
-          <label for="masculino" class="sexo-option">
-            <img src="ruta/a/icono-masculino.png" alt="Masculino"> <!-- Reemplaza con el icono masculino -->
-          </label>
+        <label for="sexo">SEXO</label>
+        <div class="button-group">
+          <button type="button" (click)="personalInfoForm.patchValue({ sexo: 'F' })" [class.selected]="personalInfoForm.value.sexo === 'F'">F</button>
+          <button type="button" (click)="personalInfoForm.patchValue({ sexo: 'M' })" [class.selected]="personalInfoForm.value.sexo === 'M'">M</button>
         </div>
       </div>
-
-      <!-- Edad -->
       <div class="form-group">
         <label for="edad">EDAD</label>
-        <input type="number" id="edad" [(ngModel)]="survey.edad" name="edad" required>
+        <input id="edad" formControlName="edad" type="number" placeholder="Escribe tu edad">
       </div>
-
-      <!-- Peso -->
       <div class="form-group">
         <label for="peso">ESCRIBE PESO (KG)</label>
-        <input type="number" id="peso" [(ngModel)]="survey.peso" name="peso" required>
+        <input id="peso" formControlName="peso" type="number" placeholder="Escribe tu peso">
       </div>
-
-      <!-- Altura -->
       <div class="form-group">
         <label for="altura">ESCRIBE ALTURA (CM)</label>
-        <input type="number" id="altura" [(ngModel)]="survey.altura" name="altura" required>
+        <input id="altura" formControlName="altura" type="number" placeholder="Escribe tu altura">
       </div>
-
-      <!-- Grasa Corporal -->
       <div class="form-group">
         <label for="grasaCorporal">TU GRASA CORPORAL (OPCIONAL)</label>
-        <input type="number" id="grasaCorporal" [(ngModel)]="survey.grasaCorporal" name="grasaCorporal">
+        <input id="grasaCorporal" formControlName="grasaCorporal" type="number" placeholder="Escribe tu grasa corporal">
       </div>
-
-      <!-- Botones -->
-      <div class="buttons">
-        <button type="button" class="btn btn-back" routerLink="/">ATRÁS</button>
-        <button type="submit" class="btn btn-next" routerLink="/dietas/tipos-comida">SIGUIENTE</button>
+      <div class="button-group">
+        <button mat-button matStepperNext>Siguiente</button>
       </div>
     </form>
-  </div>
-</div>
+  </mat-step>
+  <mat-step [stepControl]="comidaForm">
+    <form [formGroup]="comidaForm" class="step-form">
+      <h2>¿QUÉ TIPOS DE COMIDA PUEDES COMER?</h2>
+      <div *ngFor="let tipo of tiposComida" class="form-group">
+        <button type="button" (click)="onToggleSelect(tipo)" [class.selected]="tipo.selected">{{ tipo.name }}</button>
+      </div>
+      <div class="button-group">
+        <button mat-button matStepperPrevious>Atrás</button>
+        <button mat-button (click)="onSubmit()">Enviar</button>
+      </div>
+    </form>
+  </mat-step>
+</mat-horizontal-stepper>
