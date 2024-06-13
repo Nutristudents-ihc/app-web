@@ -1,86 +1,67 @@
-/* dietas/dietas.component.css */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
-
-body {
-  font-family: 'Nunito', sans-serif;
-}
-
-.survey-wrapper {
+.step-form {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
-}
-
-.survey-container {
-  background-color: #333;
-  border-radius: 10px;
-  padding: 20px;
-  width: 90%;
-  max-width: 500px;
-  color: #fff;
-  text-align: center;
 }
 
 h2 {
-  margin-bottom: 20px;
-  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 2em;
+  color: #4CAF50;
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin: 1em 0;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
 }
 
-.sexo-options {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
+.form-group label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.2em;
+  color: #4CAF50;
 }
 
-.sexo-option {
+.form-group input {
+  width: 100%;
+  padding: 0.5em;
+  font-size: 1em;
+}
+
+.button-group {
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin: 0 10px;
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 10px;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+button {
+  padding: 0.5em 1em;
+  font-size: 1em;
+  font-family: 'Nunito', sans-serif;
+  color: white;
+  background-color: #4CAF50;
+  border: none;
   cursor: pointer;
 }
 
-.sexo-option img {
-  width: 24px;
-  height: 24px;
+button.selected {
+  background-color: #388E3C;
 }
 
-input[type="number"] {
-  width: calc(100% - 20px);
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  margin-top: 5px;
+button:hover {
+  background-color: #388E3C;
 }
 
-.buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+mat-horizontal-stepper {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.btn {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.btn-back {
-  background-color: #a6e22e;
-  color: #333;
-}
-
-.btn-next {
-  background-color: #a6e22e;
-  color: #333;
+mat-step {
+  width: 100%;
 }

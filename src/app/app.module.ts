@@ -15,17 +15,18 @@ import { HomeModule } from './home/home.module';
 
 import { DietasModule } from './dietas/dietas.module'
 
+
+
 import { FormsComponent } from './login/forms/forms.component';
 import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    FooterComponent
-
-
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,11 +37,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     SigninModule,
     SeguimientoModule,
     HomeModule,
+    DietasModule,
 
-    DietasModule
 
     FormsComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+    
 
   ],
   providers: [
