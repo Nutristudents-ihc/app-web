@@ -1,0 +1,67 @@
+.step-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 2em;
+  color: #4CAF50;
+}
+
+.form-group {
+  margin: 1em 0;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.2em;
+  color: #4CAF50;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5em;
+  font-size: 1em;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+button {
+  padding: 0.5em 1em;
+  font-size: 1em;
+  font-family: 'Nunito', sans-serif;
+  color: white;
+  background-color: #4CAF50;
+  border: none;
+  cursor: pointer;
+}
+
+button.selected {
+  background-color: #388E3C;
+}
+
+button:hover {
+  background-color: #388E3C;
+}
+
+mat-horizontal-stepper {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+mat-step {
+  width: 100%;
+}
